@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算機</title>
+    <link rel="stylesheet" href="calculator/style.css">
+    <link rel="shortcut icon" href=".ico" type="image/x-icon">
+</head>
+<body>
+  <div>
+    <div id="calculator">
+        <input type="text" id="display"  >
+        <div class="row">
+            <input type="button" value="1" onclick="addToDisplay('1')">
+            <input type="button" value="2" onclick="addToDisplay('2')">
+            <input type="button" value="3" onclick="addToDisplay('3')">
+            <input type="button" value="+" onclick="addToDisplay('+')">
+        </div>
+        <div class="row">
+            <input type="button" value="4" onclick="addToDisplay('4')">
+            <input type="button" value="5" onclick="addToDisplay('5')">
+            <input type="button" value="6" onclick="addToDisplay('6')">
+            <input type="button" value="-" onclick="addToDisplay('-')">
+        </div>
+        <div class="row">
+            <input type="button" value="7" onclick="addToDisplay('7')">
+            <input type="button" value="8" onclick="addToDisplay('8')">
+            <input type="button" value="9" onclick="addToDisplay('9')">
+            <input type="button" value="*" onclick="addToDisplay('*')">
+        </div>
+        <div class="row">
+            <input type="button" value="x²" onclick="customPower()">
+            <input type="button" value="0" onclick="addToDisplay('0')">
+            <input type="button" value="." onclick="addToDisplay('.')">
+            <input type="button" value="/" onclick="addToDisplay('/')">
+
+        </div>
+        <div class="row">
+            <input type="button" value="(" onclick="lparentheses()">
+            <input type="button" value=")" onclick="addToDisplay(')')">
+            <input type="button" value="⌫" onclick="deleteLastChar()">
+
+        </div>
+        <div class="row">
+            <input type="button" value="√" onclick="squareRoot()">
+            <input type="button" value="π" onclick="pi()">
+            <input type="button" value="e" onclick="Euler()">
+        </div>
+        <div class="row">
+            <input type="button" value="C" onclick="clearDisplay()">
+            <input type="button" value="=" id="btn" onclick="calculate()">
+        </div>
+    </div>
+    <img src="p/co.png" class="img1">
+
+    <div id="sum">
+        
+    </div>
+    <input type="button" value="清除" id="bun">
+    
+    <ul class="menu">
+        <li><a href="#">基本電學公式</a>
+          <ul class="sub-menu">
+            <li><a href="#">基本公式及電阻</a>              
+              <ul class="sub-menu">
+                <div class="retext">
+                  <li class="menutext">I=Q/t(s) = V/R</li>
+                  <li><input type="button" value="套用公式"  id="I"><input type="button" value="套用公式"  id="I2"></li>
+                  <li class="menutext">V=IR = W/Q</li>
+                  <li><input type="button" value="套用公式"id="V"><input type="button" value="套用公式"id="V2"></li>
+                  <li class="menutext">R=V/I</li>
+                  <li><input type="button" value="套用公式"id="R"></li>
+                  <li class="menutext">P= V²/R = I²R</li>
+                  <li><input type="button" value="套用公式" id="P" ><input type="button" value="套用公式"id="P2"></li>
+                  
+                </div>
+              </ul>
+            </li>
+            <li><a href="#">串並聯電路</a>              
+              <ul class="sub-menu">
+                <div class="retext">
+                  <li><img src="p/ys.png" style="width: 220px;"></li>
+                  <li class="menutext">△→Y</li>
+                  <li><img src="p/ys2.png" style="width: 120px;"></li>
+                  <li><input type="button" value="套用公式"id="Y"></li>
+                  <li class="menutext">Y→△</li>
+                  <li><img src="p/ys3.png" style="width: 150px;"></li>
+                  <li><input type="button" value="套用公式"id="Y2"></li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="#">直流分析</a>              
+              <ul class="sub-menu">
+                <div class="retext">
+                  <li class="menutext">節點電壓法</li>
+                  <li><img src="p/port.png" style="width: 250px;"></li>
+                  <li><img src="p/port2.png" style="width: 200px;"></li>
+                  <li>解方程式</li>
+                  <hr>
+                  <li class="menutext">迴路電流法</li>
+                  <li><img src="p/loop.png" style="width: 220px;"></li>
+                  <li><img src="p/loop2.png" style="width: 170px;"></li>
+                  <li>解方程式</li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="#">電容與靜電</a>              
+              <ul class="sub-menu">
+                <div class="retext">
+                  <li class="menutext">C=Q/V</li>
+                  <li><input type="button" value="套用公式" id="C"></li>
+                  <li class="menutext">Q= CV= It</li>
+                  <li><input type="button" value="套用公式" id="Q"><input type="button" value="套用公式" id="Q2"></li>
+                  <li class="menutext">充電時間t=CV/I</li>
+                  <li><input type="button" value="套用公式" id="t"></li>
+                  <li class="menutext">儲存電能量<Br></li>
+                  <li class="menutext">W=1/2VQ = 1/2CV²</li>
+                  <li><input type="button" value="套用公式" id="W"><input type="button" value="套用公式" id="W2"></li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="#">電感與電磁</a>
+              <ul class="sub-menu">
+                <div class="retext">
+                  <li><img src="p/ta.png" style="width: 250px;"></li>
+                  <li class="menutext">B=<em>φ</em>/A</li>
+                  <li><input type="button" value="套用公式" id="L"></li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="#">直流暫態電容</a>              
+              <ul class="sub-menu"> 
+                <div class="retext">
+                  <li class="menutext">充電</li>
+                  <li><img src="p/vc.png" style="width: 100px;"></li>
+                  <li><input type="button" value="套用公式" id="acc"></li>
+                  <li><img src="p/avr.png" style="width: 80px;"></li>
+                  <li><input type="button" value="套用公式" id="accr"></li>
+                  <li><img src="p/ai.png" style="width: 60px;"></li>
+                  <li><input type="button" value="套用公式" id="acci"></li>
+                  <hr>
+                  <li class="menutext">放電</li>
+                  <li><img src="p/vc2.png" style="width: 80px;"></li>
+                  <li><input type="button" value="套用公式" id="acc2"></li>
+                  <li><img src="p/avr2.png" style="width: 100px;"></li>
+                  <li><input type="button" value="套用公式" id="accr2"></li>
+                  <li><img src="p/ai2.png" style="width: 100px;"></li>
+                  <li><input type="button" value="套用公式" id="acci2"></li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="#">直流暫態電感</a>              
+              <ul class="sub-menu"> 
+                <div class="retext">
+                  <li class="menutext">充電</li>
+                  <li><img src="p/VL.png" style="width: 80px;"></li>
+                  <li><input type="button" value="套用公式" id="acl"></li>
+                  <li><img src="p/VRL.png" style="width: 90px;"></li>
+                  <li><input type="button" value="套用公式" id="aclr"></li>
+                  <li><img src="p/LI.png" style="width: 80px;"></li>
+                  <li><input type="button" value="套用公式" id="acli"></li>
+                  <hr>
+                  <li class="menutext">放電</li>
+                  <li><img src="p/VL2.png" style="width: 80px;"></li>
+                  <li><input type="button" value="套用公式" id="acl2"></li>
+                  <li><img src="p/VRL2.png" style="width: 90px;"></li>
+                  <li><input type="button" value="套用公式" id="aclr2"></li>
+                  <li><img src="p/LI2.png" style="width: 80px;"></li>
+                  <li><input type="button" value="套用公式" id="acli2"></li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <label class="switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider round"></span>
+            <p class="swtext">答案留存</p>
+    </label>
+  </div>
+    <script src="calculator/calculator.js"></script>
+    <script src="calculator/conutner.js"></script>
+</body>
+</html>
