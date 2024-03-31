@@ -31,19 +31,19 @@ R.addEventListener("click", function() {
     window.scrollTo(0, 0);
 });
 P.addEventListener("click", function() {
-    display.value = "  /";
+    display.value = " ^2/";
     display.style.backgroundImage = "url('p/P.png')";
-    display.style.backgroundSize = "55px";
+    display.style.backgroundSize = "80px";
     display.style.backgroundRepeat = "no-repeat";
     display.style.backgroundPosition = "left 0px  center ";
     window.scrollTo(0, 0);
 });
 P2.addEventListener("click", function() {
-    display.value = " *";
+    display.value = " ^2*";
     display.style.backgroundImage = "url('p/P2.png')";
-    display.style.backgroundSize = "50px";
+    display.style.backgroundSize = "78px";
     display.style.backgroundRepeat = "no-repeat";
-    display.style.backgroundPosition = "left 2px  center ";
+    display.style.backgroundPosition = "left 4px  center ";
     window.scrollTo(0, 0);
 });
 Y.addEventListener("click", function() {
