@@ -26,13 +26,13 @@ document.addEventListener('keydown', function(event) {
         }
     }
 });
-// document.getElementById("display").addEventListener("keydown", function(event) {
-//     var allowedKeys = /[0-9\/\*\-\+=]|Enter|Backspace|c|e/;
-//     var key = event.key;
-//     if (!allowedKeys.test(key)) {
-//         event.preventDefault();
-//     }
-// });
+document.getElementById("display").addEventListener("keydown", function(event) {
+    var allowedKeys = /[0-9\/\*\-\+=]|Enter|Backspace|c|e/;
+    var key = event.key;
+    if (!allowedKeys.test(key)) {
+        event.preventDefault();
+    }
+});
 //Backspace
 function deleteLastChar() {
     var display = document.getElementById('display');
